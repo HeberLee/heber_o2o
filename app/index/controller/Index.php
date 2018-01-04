@@ -9,6 +9,11 @@ class Index extends Controller{
     }
 
     public function test(){
-    	return 'index index test';
+    	return \Map::getLngLat('泉州华侨大学');
     }
+
+    public function map(){
+    	return \Map::getStaticImage('泉州华侨大学');
+    }
+
 }

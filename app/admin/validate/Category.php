@@ -4,15 +4,16 @@ use think\Validate;
 
 class Category extends Validate{
 	protected $rule = [
-		['name','require|max:10','不能为空'],
-		['parent_id','number','应为数字'],
-		['id','number','应为数字'],
-		['status','number|in:-1,0,1','应为数字|超出指定范围'],
-		['listorder','number','应为数字'],
+		['name','require|max:10','分类不能为空|分类长度不能超过10个字符'],
+		['parent_id','number'],
+		['id','number'],
+		['status','number|in:-1,0,1','状态必须为数字|状态值不合法'],
+		['listorder','number'],
 	];
 	/**场景设置**/
 	protected $scene = [
 		'add' => ['name','parent_id'],
 		'listorder' => ['id','listorder'],
+		'status' => ['id','status'],
 	];
 }

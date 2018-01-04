@@ -12,6 +12,7 @@ class Index extends Controller
     	echo "hello heber";
     }
     public function welcome(){
+        \phpmailer\Email::send('907008122@qq.com','heelo','monika');
     	echo "surprise!";
     }
 }

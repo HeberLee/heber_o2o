@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\category\add.html";i:1514887211;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\category\edit.html";i:1514897060;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -32,11 +32,11 @@
 </head>
 <body>
 <div class="page-container">
-	<form class="form form-horizontal form-o2o-add" id="form-o2o-add" method="post" action="<?php echo url('category/save'); ?>">
+	<form class="form form-horizontal form-o2o-add" id="form-o2o-add" method="post" action="<?php echo url('category/resave'); ?>">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>生活服务分类名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="name" name="name">
+				<input type="text" class="input-text" value="<?php echo $category['name']; ?>" placeholder="" id="name" name="name">
 			</div>
 		</div>
 		<div class="row cl">
@@ -46,7 +46,7 @@
 				<select name="parent_id" class="select">
 					<option value="0">一级分类</option>
 					<?php if(is_array($categorys) || $categorys instanceof \think\Collection || $categorys instanceof \think\Paginator): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-					<option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+					<option value="<?php echo $vo['id']; ?>" <?php if($category['parent_id'] == $vo['id']): ?>selected="selected"<?php endif; ?>><?php echo $vo['name']; ?></option>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</select>
 				</span>
@@ -54,6 +54,7 @@
 		</div>
 		
 		<div class="row cl">
+			<input type="hidden" name="id" value="<?php echo $category['id']; ?>">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
 				<button  type="submit" class="btn btn-primary radius" ><i class="Hui-iconfont">&#xe632;</i> 保存</button>
 				
