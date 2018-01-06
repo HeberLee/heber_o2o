@@ -109,9 +109,9 @@
 			<div class="formControls col-xs-8 col-sm-3"> <span class="select-box">
 				<select name="category_id" class="select categoryId">
 					<option value="0">--请选择--</option>
-					
-					<option value=""></option>
-					
+					{volist name="categorys" id="vo"}
+					<option value="{$vo.id}">{$vo.name}</option>
+					{/volist}
 				</select>
 				</span> 
 			</div>
@@ -175,7 +175,10 @@
 
 <script>
 	var SCOPE = {
-		'city_url':"{:url('bis/index')}",
+		'city_url':"{:url('api/city/getCitiesByParentId')}",
+		'category_url':"{:url('api/category/getCategorysByParentId')}",
+		'uploadify_swf':'__STATIC__/admin/uploadify/uploadify.swf',
+		'image_upload':"{:url('api/image/upload')}",
 	};
 </script>
 

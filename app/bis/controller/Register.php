@@ -4,14 +4,17 @@ use think\Controller;
 
 class Register extends Controller{
 
-	private $obj;
+	private $city_obj;
+	private $category_obj;
 
 	public function _initialize(){
-		$this->obj = model('City');
+		$this->city_obj = model('City');
+		$this->category_obj = model('Category');
 	}
 	public function index(){
-		$cities = $this->obj->getNormalCitiesByParentId();
-		return $this->fetch('',['cities'=>$cities]);
+		$cities = $this->city_obj->getNormalCitiesByParentId();
+		$categorys = $this->category_obj->getNormalFirstCategorys();
+ 		return $this->fetch('',['cities'=>$cities,'categorys'=>$categorys]);
 	}
 
 }

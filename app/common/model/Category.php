@@ -1,5 +1,5 @@
 <?php
-namespace app\admin\model;
+namespace app\common\model;
 use think\Model;
 use think\Request;
 
@@ -24,7 +24,7 @@ class Category extends Model{
 					->select();
 	}
 
-	public function getCategorys($parent_id){
+	public function getCategorysByParentId($parent_id){
 		$data = [
 			'parent_id' => $parent_id,
 			'status' => ['neq','-1'],

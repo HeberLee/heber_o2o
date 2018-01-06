@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\register\index.html";i:1515141093;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1484376710;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1484376736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\register\index.html";i:1515244171;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
   <link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadify/uploadify.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -139,9 +140,9 @@
 			<div class="formControls col-xs-8 col-sm-3"> <span class="select-box">
 				<select name="category_id" class="select categoryId">
 					<option value="0">--请选择--</option>
-					
-					<option value=""></option>
-					
+					<?php if(is_array($categorys) || $categorys instanceof \think\Collection || $categorys instanceof \think\Paginator): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+					<option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</select>
 				</span> 
 			</div>
@@ -207,10 +208,22 @@
 <script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.js"></script> 
 <script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/image.js"></script>
 
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
+<script>
+	var SCOPE = {
+		'city_url':"<?php echo url('api/city/getCitiesByParentId'); ?>",
+		'category_url':"<?php echo url('api/category/getCategorysByParentId'); ?>",
+		'uploadify_swf':'__STATIC__/admin/uploadify/uploadify.swf',
+		'image_upload':"<?php echo url('api/image/upload'); ?>",
+	};
+</script>
+
 <!--分配编辑器-->
 <script>
 $(function(){

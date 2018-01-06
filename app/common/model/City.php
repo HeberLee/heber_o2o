@@ -1,5 +1,5 @@
 <?php
-namespace app\bis\model;
+namespace app\common\model;
 use think\Model;
 use think\Request;
 

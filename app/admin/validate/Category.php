@@ -4,7 +4,7 @@ use think\Validate;
 
 class Category extends Validate{
 	protected $rule = [
-		['name','require|max:10','分类不能为空|分类长度不能超过10个字符'],
+		['name','require|max:20','分类不能为空|分类长度不能超过20个字符'],
 		['parent_id','number'],
 		['id','number'],
 		['status','number|in:-1,0,1','状态必须为数字|状态值不合法'],
