@@ -40,3 +40,27 @@ function doCurl($url,$type=0,$data=[]){
 	curl_close($ch);
 	return $output;
 }
+
+//商户入驻申请
+function bisRegister($status){
+	if($status == 1){
+		$str = "入驻成功";
+	}
+	else if($status == 0){
+		$str = "待审核，审核后平台会发送邮件通知！";
+	}
+	else if($status == -1){
+		$str = "非常抱歉，您提交的材料不符合条件，请重新提交";
+	}
+	else{
+		$str = "抱歉，该申请不存在";
+	}
+	return $str;
+}
+
+function pagination($obj){
+	if(!$obj){
+		return '';
+	}
+	return '<div class="cl pd-5 bg-1 bk-gray mt-20 tp5-o2o">'.$obj->render().'</div>';
+}

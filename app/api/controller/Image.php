@@ -5,7 +5,7 @@ use think\Request;
 use think\File;
 
 class Image extends Controller{
-
+//$_SERVER['SCRIPT_NAME'].'/../'.$info->getPathname()
 	public function upload(Request $request){
 		$file = $request->file('file');
 		//指定上传文件存放路径

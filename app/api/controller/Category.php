@@ -14,7 +14,7 @@ class Category extends Controller{
 		if(!$parent_id){
 			$this->error('id不存在');
 		}
-		$categorys = $this->obj->getCategorysByParentId($parent_id);
+		$categorys = $this->obj->getCategorysByParentIdNoPages($parent_id);
 		if($categorys){
 		return show(1,'success',$categorys);			
 		}

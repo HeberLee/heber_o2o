@@ -34,6 +34,19 @@ class Category extends Model{
 		];
 		return $this->where($data)
 					->order($order)
-					->paginate();
+					->paginate(5);
+	}
+
+	public function getCategorysByParentIdNoPages($parent_id){
+		$data = [
+			'parent_id' => $parent_id,
+			'status' => ['neq','-1'],
+		];
+		$order = [
+			'listorder' => 'asc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
 	}
 }

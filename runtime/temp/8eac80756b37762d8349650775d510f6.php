@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\register\index.html";i:1515244171;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\register\index.html";i:1515300399;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -33,7 +33,7 @@
 </head>
 <div class="cl pd-5 bg-1 bk-gray mt-20"> <h1>商户入驻申请</h1></div>
 <article class="page-container">
-	<form class="form form-horizontal"  method="post" action="">
+	<form class="form form-horizontal"  method="post" action="<?php echo url('register/add'); ?>">
 	基本信息：
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商户名称：</label>
@@ -107,13 +107,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">法人:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="faren">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="legal_person">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">法人电话:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="faren_tel">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="legal_person_tel">
 			</div>
 		</div>
 		<div class="row cl">
