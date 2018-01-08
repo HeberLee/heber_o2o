@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\apply.html";i:1515330097;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\apply.html";i:1515421932;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -57,7 +57,7 @@
 					<td class="text-c"><?php echo $vo['legal_person_tel']; ?></td>
 					<td><?php echo date("Y-m-d H:i:s",$vo['create_time']); ?></td>
 					<td class="td-status"><a href="<?php echo url('bis/status',['id'=>$vo['id'],'status'=>$vo['status']==1?0:1]); ?>" title="点击修改状态"><?php echo status($vo['status']); ?></a></td>
-					<td class="td-manage"> <a style="text-decoration:none" class="ml-5" onClick="o2o_s_edit('编辑','<?php echo url('bis/edit',['id'=>$vo['id']]); ?>','',300)" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="o2o_del('<?php echo url('bis/status',['id'=>$vo['id'],'status'=>'-1']); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td class="td-manage"> <a style="text-decoration:none" class="ml-5" onClick="o2o_s_edit('商户详情','<?php echo url('bis/detail',['id'=>$vo['id']]); ?>')" href="javascript:;" title="查看商户详细信息"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="o2o_del('<?php echo url('bis/status',['id'=>$vo['id'],'status'=>'-1']); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>

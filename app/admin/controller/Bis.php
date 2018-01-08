@@ -8,11 +8,15 @@ class Bis extends Controller
     private $obj;
 
     public function _initialize(){
-        $this->obj = model('Bis');
+        $this->bis_obj = model('Bis');
+        $this->city_obj = model('City');
+        $this->category_obj = model('Category');
+        $this->bis_location_obj = model('BisLocation');
+        $this->bis_account_obj = model('BisAccount');
     }
 
 	public function apply(){
-        $bises = $this->obj->getBises();
+        $bises = $this->bis_obj->getBises();
         return $this->fetch('',['bises'=>$bises]);
     }
 
@@ -22,7 +26,7 @@ class Bis extends Controller
         if(!$validate->scene('status')->check($data)){
             $this->error($validate->getError());
         }
-        $res = $this->obj->update($data,['id'=>$data['id']]);
+        $res = $this->bis_obj->update($data,['id'=>$data['id']]);
         if($res){
             $this->success('更新状态成功！');
         }
@@ -32,6 +36,22 @@ class Bis extends Controller
     }
 
     public function detail(){
-        return $this->fetch();
+        $id = input('get.');
+        if(empty($id)){
+            return $this->error('ID错误');
+        }
+        $cities = $this->city_obj->getNormalCitiesByParentId();
+        $categorys = $this->category_obj->getNormalFirstCategorys();
+        //获取商户信息
+        $bisData = $this->bis_obj->get($id);
+        $bisLocationData = model('BisLocation')->get(['bis_id'=>$id]);
+        $BisAccountData = $this->bis_account_obj->get(['bis_id'=>$id]);
+        return $this->fetch('',[
+            'cities' => $cities,
+            'categorys' => $categorys,
+            'bisData' => $bisData,
+            'bisLocationData' => $bisLocationData,
+            'BisAccountData' => $BisAccountData,
+        ]);
     }
 }
