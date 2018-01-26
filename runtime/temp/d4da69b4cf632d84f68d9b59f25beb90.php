@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\detail.html";i:1515423489;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\detail.html";i:1516953750;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -30,6 +30,7 @@
 <meta name="keywords" content="tp5打造o2o平台系统">
 <meta name="description" content="o2o平台">
 </head>
+
 <article class="page-container">
 	<form class="form form-horizontal">
 	基本信息：
@@ -45,17 +46,15 @@
 			<div class="formControls col-xs-8 col-sm-2"> 
 				<span class="select-box">
 				<select name="city_id" class="select cityId">
-					<option value="0">--请选择--</option>
-					<?php if(is_array($cities) || $cities instanceof \think\Collection || $cities instanceof \think\Paginator): $i = 0; $__LIST__ = $cities;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-					<option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
-					<?php endforeach; endif; else: echo "" ;endif; ?>
+					<option value="0"><?php echo $bisData['city_name']['0']['0']; ?></option>
+
 				</select>
 				</span>
 			</div>
 			<div class="formControls col-xs-8 col-sm-2">
 				<span class="select-box">
 				<select name="se_city_id" class="select se_city_id">
-					<option value="0">--请选择--</option>
+					<option value="0"><?php echo $bisData['city_name']['1']['0']; ?></option>
 				</select>
 				</span> 
 			</div>
@@ -64,17 +63,17 @@
 		<div class="row cl">
               <label class="form-label col-xs-4 col-sm-2">缩略图：</label>
               <div class="formControls col-xs-8 col-sm-9">
-                <input id="file_upload"  type="file" multiple="true" >
-                <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
-                <input id="file_upload_image" name="logo" type="hidden" multiple="true" value="">
+
+                <img id="upload_org_code_img" src="<?php echo $bisData['logo']; ?>" width="150" height="150">
+
               </div>
         </div>
         <div class="row cl">
               <label class="form-label col-xs-4 col-sm-2">营业执照：</label>
               <div class="formControls col-xs-8 col-sm-9">
-                <input id="file_upload_other"  type="file" multiple="true" >
-                <img style="display: none" id="upload_org_code_img_other" src="" width="150" height="150">
-                <input id="file_upload_image_other" name="licence_logo" type="hidden" multiple="true" value="">
+
+                <img id="upload_org_code_img_other" src="<?php echo $bisData['licence_logo']; ?>" width="150" height="150">
+
               </div>
         </div>
         
@@ -212,7 +211,6 @@
 	var SCOPE = {
 		'city_url':"<?php echo url('api/city/getCitiesByParentId'); ?>",
 		'category_url':"<?php echo url('api/category/getCategorysByParentId'); ?>",
-
 	};
 </script>
 

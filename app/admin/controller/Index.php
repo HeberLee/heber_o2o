@@ -9,7 +9,12 @@ class Index extends Controller
         return $this->fetch();
     }
      public function test(){
-    	echo "hello heber";
+    	$data = model('BisLocation')->get(['bis_id'=>3,'is_main'=>1]);
+
+        $cc[] = 1;
+        $cc[] = $data; 
+        
+        dump($cc);
     }
     public function welcome(){
       //  \phpmailer\Email::send('907008122@qq.com','heelo','monika');

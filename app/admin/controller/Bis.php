@@ -36,16 +36,23 @@ class Bis extends Controller
     }
 
     public function detail(){
-        $id = input('get.');
+        $id = input('get.id');
         if(empty($id)){
             return $this->error('ID错误');
         }
+
         $cities = $this->city_obj->getNormalCitiesByParentId();
         $categorys = $this->category_obj->getNormalFirstCategorys();
         //获取商户信息
         $bisData = $this->bis_obj->get($id);
-        $bisLocationData = model('BisLocation')->get(['bis_id'=>$id]);
-        $BisAccountData = $this->bis_account_obj->get(['bis_id'=>$id]);
+        //将bis的城市从id转为名字
+
+
+        $bisData['city_name'] = $this->bis_obj->getCityNameByPath($bisData['city_path']);
+        // dump($bisData['city_name']); 
+        
+        $bisLocationData = $this->bis_location_obj->get(['bis_id'=>$id,'is_main'=>1]);
+        $BisAccountData = $this->bis_account_obj->get($id);
         return $this->fetch('',[
             'cities' => $cities,
             'categorys' => $categorys,
