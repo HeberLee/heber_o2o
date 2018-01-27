@@ -4,10 +4,10 @@ use think\Model;
 use think\Request;
 
 class Bis extends BaseModel{
-	public function getBises(){
+	public function getBisesByStatus($status){
 		$data = [
 			// 'parent_id' => 0,
-			// 'status' => 1,
+			'status'=> $status,
 		];
 		$order = [
 			'create_time' => 'desc',

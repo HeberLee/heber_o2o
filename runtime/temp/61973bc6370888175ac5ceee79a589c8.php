@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\index\index.html";i:1514818866;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\menu.html";i:1515326154;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\index\index.html";i:1514818866;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\menu.html";i:1517044943;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 ﻿<!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -85,9 +85,9 @@
 			<dt><i class="Hui-iconfont">&#xe613;</i> 商家管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="" data-title="商家列表" href="javascript:void(0)">商户列表</a></li>
+					<li><a _href="<?php echo url('Bis/index'); ?>" data-title="商家列表" href="javascript:void(0)">商户列表</a></li>
 					<li><a _href="<?php echo url('Bis/apply'); ?>" data-title="商家入驻申请" href="javascript:void(0)">商家入驻申请</a></li>
-					<li><a _href="" data-title="删除的商户" href="javascript:void(0)">删除的商户</a></li>
+					<li><a _href="<?php echo url('Bis/delete'); ?>" data-title="删除的商户" href="javascript:void(0)">删除的商户</a></li>
 				</ul>
 			</dd>
 		</dl>

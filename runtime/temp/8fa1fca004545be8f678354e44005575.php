@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\apply.html";i:1517043744;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\delete.html";i:1517045042;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -31,7 +31,7 @@
 <meta name="description" content="o2o平台">
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 商户入驻申请 </nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 已被删除的商户列表 </nav>
 <div class="page-container">
 	
 	
@@ -39,11 +39,11 @@
 		<table class="table table-border table-bordered table-bg table-hover table-sort">
 			<thead>
 				<tr class="text-c">
-					<th width="40">ID</th>
+					<th width="80">ID</th>
 					<th width="100">商户名称</th>
-					<th width="40">法人</th>
-					<th width="140">法人联系电话</th>
-					<th width="100">申请时间</th>
+					<th width="30">法人</th>
+					<th width="150">联系电话</th>
+					<th width="60">申请时间</th>
 					<th width="60">状态</th>
 					<th width="100">操作</th>
 				</tr>
@@ -55,16 +55,15 @@
 					<td><?php echo $vo['name']; ?></td>
 					<td class="text-c"><?php echo $vo['legal_person']; ?></td>
 					<td class="text-c"><?php echo $vo['legal_person_tel']; ?></td>
-					<td><?php echo date("Y-m-d H:i:s",$vo['create_time']); ?></td>
+					<td><?php echo date("Y-m-d",$vo['create_time']); ?></td>
 					<td class="td-status"><a href="<?php echo url('bis/status',['id'=>$vo['id'],'status'=>$vo['status']==1?0:1]); ?>" title="点击修改状态"><?php echo status($vo['status']); ?></a></td>
-					<td class="td-manage"> <a style="text-decoration:none" class="ml-5" onClick="o2o_edit('商户详情','<?php echo url('bis/detail',['id'=>$vo['id']]); ?>')" href="javascript:;" title="查看商户详细信息"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="o2o_del('<?php echo url('bis/status',['id'=>$vo['id'],'status'=>'-1']); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a><a style="text-decoration:none" class="ml-5" href="<?php echo url('bis/status',['id'=>$vo['id'],'status'=>'2']); ?>" title="不通过">不通过</a></td>
+					<td class="td-manage"> <a style="text-decoration:none" class="ml-5" onClick="o2o_edit('商户详情','<?php echo url('bis/detail',['id'=>$vo['id']]); ?>')" href="javascript:;" title="查看商户详细信息"><i class="Hui-iconfont">&#xe6df;</i></a></td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
 	</div>
 </div>
-<?php echo pagination($bises); ?>
 <!--包含头部文件-->
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.1/layer.js"></script> 

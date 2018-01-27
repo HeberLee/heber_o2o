@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\detail.html";i:1516953750;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\bis\detail.html";i:1517029367;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -37,7 +37,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商户名称：</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+				<input type="text" class="input-text" value="<?php echo $bisData['name']; ?>" placeholder="" id="" name="name">
 			</div>
 		</div>
 		
@@ -86,50 +86,50 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">银行账号:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="bank_info">
+				<input type="text" class="input-text" value="<?php echo $bisData['bank_info']; ?>" placeholder="" id="" name="bank_info">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">开户行名称:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="bank_name">
+				<input type="text" class="input-text" value="<?php echo $bisData['bank_name']; ?>" placeholder="" id="" name="bank_name">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">开户行姓名:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="bank_user">
+				<input type="text" class="input-text" value="<?php echo $bisData['bank_user']; ?>" placeholder="" id="" name="bank_user">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">法人:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="legal_person">
+				<input type="text" class="input-text" value="<?php echo $bisData['legal_person']; ?>" placeholder="" id="" name="legal_person">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">法人电话:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="legal_person_tel">
+				<input type="text" class="input-text" value="<?php echo $bisData['legal_person_tel']; ?>" placeholder="" id="" name="legal_person_tel">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>邮箱：</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="email">
+				<input type="text" class="input-text" value="<?php echo $bisData['email']; ?>" placeholder="" id="" name="email">
 			</div>
 		</div>
 		总店信息：
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">电话:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="tel">
+				<input type="text" class="input-text" value="<?php echo $bisLocationData['tel']; ?>" placeholder="" id="" name="tel">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">联系人:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="contact">
+				<input type="text" class="input-text" value="<?php echo $bisLocationData['contact']; ?>" placeholder="" id="" name="contact">
 			</div>
 		</div>
 		<div class="row cl">
@@ -155,14 +155,14 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">商户地址：</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="address">
+				<input type="text" class="input-text" value="<?php echo $bisLocationData['address']; ?>" placeholder="" id="" name="address">
 			</div>
 			<a  class="btn btn-default radius ml-10 maptag">标注</a>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">营业时间:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="open_time">
+				<input type="text" class="input-text" value="<?php echo $bisLocationData['tel']; ?>" placeholder="" id="" name="open_time">
 			</div>
 		</div>
 		
@@ -177,13 +177,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">用户名:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="username">
+				<input type="text" class="input-text" value="<?php echo $bisAccountData['username']; ?>" placeholder="" id="" name="username">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">密码:</label>
 			<div class="formControls col-xs-8 col-sm-3">
-				<input type="password" class="input-text" value="" placeholder="" id="" name="password">
+				<input type="password" class="input-text" value="<?php echo $bisAccountData['password']; ?>" placeholder="" id="" name="password">
 			</div>
 		</div>
 		
