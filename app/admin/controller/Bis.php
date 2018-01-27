@@ -40,9 +40,10 @@ class Bis extends Controller
         if(!$validate->scene('status')->check($data)){
             $this->error($validate->getError());
         }
-        $res = $this->bis_obj->update($data,['id'=>$data['id']]);
-        $location_res = $this->bis_location_obj->update($data,['bis_id'=>$data['id']]);
-        $account_res = $this->bis_account_obj->update($data,['bis_id'=>$data['id']]);
+        // dump($data);
+        $res = $this->bis_obj->update($data);
+        $location_res = $this->bis_location_obj->update(['status'=>$data['status']],['bis_id'=>$data['id']]);
+        $account_res = $this->bis_account_obj->update(['status'=>$data['status']],['bis_id'=>$data['id']]);
         if($res && $location_res && $account_res){
             $this->success('更新状态成功！');
         }
