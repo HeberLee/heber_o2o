@@ -10,11 +10,15 @@ class Base extends Controller{
 		if(!$isLogin){
 			return $this->redirect(url('login/index'));
 		}
+		// $this->account = session('bisAccount','','');
+		// if(!$this->account['id']){
+		// 	return $this->redirect(url('login/index'));
+		// }
 	}
 
 	public function isLogin(){
 		$user = $this->getLoginUser();
-		if($user && $user->id){
+		if($user && $user['id']){
 			return true;
 		}
 		else{
@@ -23,9 +27,9 @@ class Base extends Controller{
 	}
 
 	public function getLoginUser(){
-		if(!$this->account){
-			$this->account = session('bisAccount','','');
-		}
+		// if(!$this->account){
+			$this->account = session('bisAccount','','bis');
+		// }
 		return $this->account;
 
 	}
