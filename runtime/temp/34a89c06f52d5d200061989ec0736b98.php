@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\index\index.html";i:1517061796;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:70:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\menu.html";i:1486235826;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\index\index.html";i:1517061796;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:70:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\menu.html";i:1517210942;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -69,8 +69,8 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 门店管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-				    <li><a _href="" data-title="新增门店" href="javascript:void(0)">新增门店</a></li>
-					<li><a _href="" data-title="门店列表" href="javascript:void(0)">门店列表</a></li>
+				    <li><a _href="<?php echo url('location/add'); ?>" data-title="新增门店" href="javascript:void(0)">新增门店</a></li>
+					<li><a _href="<?php echo url('location/index'); ?>" data-title="门店列表" href="javascript:void(0)">门店列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -79,8 +79,8 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i> 团购管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="" data-title="团购列表" href="javascript:void(0)">团购列表</a></li>
-					<li><a _href="" data-title="团购商品添加" href="javascript:void(0)">团购商品添加</a></li>
+					<li><a _href="<?php echo url('deal/index'); ?>" data-title="团购列表" href="javascript:void(0)">团购列表</a></li>
+					<li><a _href="<?php echo url('deal/add'); ?>" data-title="团购商品添加" href="javascript:void(0)">团购商品添加</a></li>
 					
 				</ul>
 			</dd>

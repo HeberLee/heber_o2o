@@ -17,7 +17,7 @@
 				<span class="select-box">
 				<select name="city_id" class="select cityId">
 					<option value="0">--请选择--</option>
-					{volist name="citys" id="vo"}
+					{volist name="cities" id="vo"}
 					<option value="{$vo.id}">{$vo.name}</option>
 					{/volist}
 				</select>
@@ -98,19 +98,21 @@
 		</div>
 	</form>
 </article>
-<script>
+
+
 <!--包含尾部文件-->
 {include file="public/footer" /}
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
 <script>
- var SCOPE = {
-   'city_url' : '{:url('api/city/getCitysByParentId')}',
-    'category_url' : '{:url('api/category/getCategoryByParentId')}',
-	'uploadify_swf' : '__STATIC__/admin/uploadify/uploadify.swf',
-	'image_upload' : '{:url('api/image/upload')}',
- };
+	var SCOPE = {
+		'city_url':"{:url('api/city/getCitiesByParentId')}",
+		'category_url':"{:url('api/category/getCategorysByParentId')}",
+		'uploadify_swf':'__STATIC__/admin/uploadify/uploadify.swf',
+		'image_upload':"{:url('api/image/upload')}",
+	};
 </script>
 <script>
 $(function(){
