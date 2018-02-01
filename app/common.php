@@ -11,6 +11,7 @@
 
 // 应用公共文件
 
+//将状态以不同颜色的方框表示出来
 function status($status){
 	if($status == 1){
 		$str = "<span class='label label-success radius'>正常</span>";
@@ -22,6 +23,18 @@ function status($status){
 		$str = "<span class='label label-danger radius'>删除</span>";
 	}
 	return $str;
+}
+
+//将分类从id转为名字
+function category($category_id){
+	$data = model('category')->get(['id'=>$category_id]);
+	return $data['name'];
+}
+
+//将城市从id转为名字
+function city($city_id){
+	$data = model('city')->get(['id'=>$city_id]);
+	return $data['name'];
 }
 
 function doCurl($url,$type=0,$data=[]){

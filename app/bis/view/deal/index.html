@@ -8,25 +8,25 @@
 		<table class="table table-border table-bordered table-bg table-hover table-sort">
 			<thead>
 				<tr class="text-c">
-					<th width="80">ID</th>
-					<th width="100">名称</th>
-					<th width="60">申请时间</th>
-					<th width="60">开始时间-结束时间</th>
+					<th width="40">ID</th>
+					<th width="40">名称</th>
+					<th width="80">申请时间</th>
+					<th width="140">开始时间-结束时间</th>
 					<th width="60">状态</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-				
+				{volist name="deals" id="vo"}
 				<tr class="text-c">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="td-status"></td>
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.create_time|date="Y-m-d",###}</td>
+					<td>{}</td>
+					<td class="td-status">{$vo.status|status}</td>
 					<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="查看"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
-				
+				{/volist}
 			</tbody>
 		</table>
 	</div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\deal\index.html";i:1517395748;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\deal\index.html";i:1517481464;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1514891527;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1514785741;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -21,8 +21,7 @@
 <link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/icheck/icheck.css" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/common.css" />
-  <link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadify/uploadify.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/common.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -32,19 +31,53 @@
 <meta name="description" content="o2o平台">
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 商户入驻申请 </nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 团购商品列表 </nav>
 <div class="page-container">
-<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a class="btn btn-primary radius"  href=""><i class="Hui-iconfont">&#xe600;</i> 添加团购商品</a></span> <span class="r"></span> </div>
+<div class="cl pd-5 bg-1 bk-gray mt-20"> 
+	<div class="text-c">
+		<form action="<?php echo url('deal/index'); ?>" method="get">
+		 <span class="select-box inline">
+			<select name="category_id" class="select">
+				
+				<option value="0">全部分类</option>
+				<?php if(is_array($categorys) || $categorys instanceof \think\Collection || $categorys instanceof \think\Paginator): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<option value="<?php echo $vo['id']; ?>" <?php if($vo['id'] == $category_id): ?>selected="selected"<?php endif; ?>><?php echo $vo['name']; ?></option>
+
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+				
+			</select>
+		</span>
+		<span class="select-box inline">
+			<select name="city_id" class="select">
+				<option value="0">全部城市</option>
+				<?php if(is_array($cities) || $cities instanceof \think\Collection || $cities instanceof \think\Paginator): $i = 0; $__LIST__ = $cities;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<option value="<?php echo $vo['id']; ?>" <?php if($vo['id'] == $city_id): ?>selected="selected"<?php endif; ?>><?php echo $vo['name']; ?></option>
+
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</select>
+		</span> 日期范围：
+		<input type="text" name="start_time" value="<?php echo $start_time; ?>" class="input-text" id="countTimestart" onfocus="selecttime(1)" value="" style="width:120px;" >
+			-
+		<input type="text" name="end_time" value="<?php echo $end_time; ?>" class="input-text" id="countTimestart" onfocus="selecttime(1)" value=""  style="width:120px;">
+		<input type="text" name="name" id="" value="<?php echo $name; ?>" placeholder=" 商品名称" style="width:250px" class="input-text">
+		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索
+		</button>
+	</form>>
+	</div>
+</div>
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-bg table-hover table-sort">
 			<thead>
 				<tr class="text-c">
-					<th width="40">ID</th>
-					<th width="40">名称</th>
-					<th width="80">申请时间</th>
-					<th width="140">开始时间-结束时间</th>
+					<th width="20">ID</th>
+					<th width="100">商品名称</th>
+					<th width="40">栏目分类</th>
+					<th width="40">城市</th>
+					<th width="40">购买件数</th>
+					<th width="80">开始结束时间</th>
+					<th width="80">创建时间</th>
 					<th width="60">状态</th>
-					<th width="100">操作</th>
+					<th width="40">操作</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,9 +85,12 @@
 				<tr class="text-c">
 					<td><?php echo $vo['id']; ?></td>
 					<td><?php echo $vo['name']; ?></td>
-					<td><?php echo date("Y-m-d",$vo['create_time']); ?></td>
-					<td>{}</td>
-					<td class="td-status"><?php echo status($vo['status']); ?></td>
+					<td><?php echo category($vo['category_id']); ?></td>
+					<td><?php echo city($vo['city_id']); ?></td>
+					<td><?php echo $vo['total_count']; ?></td>
+					<td><?php echo $vo['start_time']; ?></td>
+					<td><?php echo $vo['create_time']; ?></td>
+					<td><?php echo status($vo['status']); ?></td>
 					<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="查看"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -72,6 +108,6 @@
 <script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.js"></script> 
 <script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
-<script type="text/javascript" src="__STATIC__/admin/uploadify/jquery.uploadify.min.js"></script>
-<script type="text/javascript" src="__STATIC__/admin/js/image.js"></script>
 
+
+<script src="__STATIC__/admin/hui/lib/My97DatePicker/WdatePicker.js"></script>

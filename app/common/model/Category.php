@@ -49,4 +49,11 @@ class Category extends Model{
 					->order($order)
 					->select();
 	}
+
+	// public function getNameById($id){
+	// 	$data = [
+	// 		'id' => $id,
+	// 	];
+	// 	return $this->where($data);
+	// }
 }

@@ -19,6 +19,19 @@ class City extends Model{
 					->select();
 	}
 
+	public function getNormalCities(){
+		$data = [
+			'parent_id' => ['gt',0],
+			'status' => 1,
+		];
+		$order = [
+			'id' => 'desc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
+	}
+
 	public function ins(){
 
 		$this->saveAll([
