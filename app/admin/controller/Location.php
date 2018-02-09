@@ -15,6 +15,7 @@ class Location extends Controller
     public function index()
     {
         $locations = $this->bis_location_obj->getLocations();
+
         return $this->fetch('',['locations'=>$locations]);
     }
 
