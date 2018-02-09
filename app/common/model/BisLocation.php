@@ -17,4 +17,31 @@ class BisLocation extends BaseModel{
 					->order($order)
 					->paginate(5);
 	}
+
+	public function getLocations(){
+
+		$data = [
+			'status' => 1,
+		];
+		$order = [
+			'create_time' => 'desc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
+	}
+
+	public function getApplyLocations(){
+
+		$data = [
+			'status' => 0,
+		];
+		$order = [
+			'create_time' => 'desc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
+	}
+
 }

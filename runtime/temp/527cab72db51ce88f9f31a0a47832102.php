@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\location\add.html";i:1517207005;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\location\add.html";i:1518162330;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -33,7 +33,7 @@
 </head>
 <div class="cl pd-5 bg-1 bk-gray mt-20"> 添加分店信息</div>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add" method="post" action="">
+	<form class="form form-horizontal" id="form-article-add" method="get" action="<?php echo url('location/add'); ?>">
 	基本信息：
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分店名称：</label>

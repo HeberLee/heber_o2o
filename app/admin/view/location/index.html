@@ -1,0 +1,42 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 商户列表 </nav>
+<div class="page-container">
+	
+	
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="40">ID</th>
+					<th width="100">门店名称</th>
+					<th width="30">城市</th>
+					<th width="30">分类</th>
+					<th width="70">地址</th>
+					<th width="70">电话</th>
+					<th width="60">申请时间</th>
+					<th width="60">状态</th>
+					<th width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="locations" id="vo"}
+				<tr class="text-c">
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td class="text-c">{$vo.city_id|city}</td>
+					<td class="text-c">{$vo.category_id|category}</td>
+					<td class="text-c">{$vo.address}</td>
+					<td class="text-c">{$vo.tel}</td>
+					<td>{$vo.create_time|date="Y-m-d",###}</td>
+					<td class="td-status"><a href="{:url('location/status',['id'=>$vo.id,'status'=>$vo.status==1?0:1])}" title="点击修改状态">{$vo.status|status}</a></td>
+					<td class="td-manage"> <a style="text-decoration:none" class="ml-5" onClick="o2o_edit('商户详情','{:url('location/detail',['id'=>$vo.id])}')" href="javascript:;" title="查看商户详细信息"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="o2o_del('{:url('location/status',['id'=>$vo.id,'status'=>'-1'])}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--包含头部文件-->
+{include file="public/footer" /}

@@ -43,7 +43,7 @@ class Register extends Controller{
 		}
 		//商户信息入库
 		$bisData = [
-			'name' => $data['name'],
+			'name' => htmlentities($data['name']),
 			'email' => $data['email'],
 			'logo' => $data['logo'],
 			'licence_logo' => $data['licence_logo'],
