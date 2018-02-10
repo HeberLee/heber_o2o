@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\register.html";i:1518258924;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +48,7 @@
                 <p class="pass-form-item">
                     <label class="pass-label">验证码</label>
                     <input type="text" name="verifyCode" class="pass-text-input " placeholder="请输入验证码">
-                <img id="captcha_img" src="{:captcha_src()}" alt="验证码" onclick="refreshVerify()"><a href="javascript:refreshVerify()" >点击刷新</a>
+                <img id="captcha_img" src="<?php echo captcha_src(); ?>" alt="验证码" onclick="refreshVerify()"><a href="javascript:refreshVerify()" >点击刷新</a>
                 </p>
                 
                 <p class="pass-form-item">
