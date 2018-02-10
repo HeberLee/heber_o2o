@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\register.html";i:1518258924;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\register.html";i:1518267206;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +27,10 @@
         </div>
 
         <div class="content">
-            <form>
+            <form action="<?php echo url('User/register'); ?>" method="post">
                 <p class="pass-form-item">
                     <label class="pass-label">用户名</label>
-                    <input type="text" name="userName" class="pass-text-input" placeholder="请设置用户名">
+                    <input type="text" name="username" class="pass-text-input" placeholder="请设置用户名">
                 </p>
                 <p class="pass-form-item">
                     <label class="pass-label">邮箱号</label>
@@ -43,12 +43,13 @@
                 </p>
                 <p class="pass-form-item">
                     <label class="pass-label">确认密码</label>
-                    <input type="text" name="password" class="pass-text-input" placeholder="请设置登录密码">
+                    <input type="text" name="repassword" class="pass-text-input" placeholder="请设置登录密码">
                 </p>
                 <p class="pass-form-item">
                     <label class="pass-label">验证码</label>
-                    <input type="text" name="verifyCode" class="pass-text-input " placeholder="请输入验证码">
-                <img id="captcha_img" src="<?php echo captcha_src(); ?>" alt="验证码" onclick="refreshVerify()"><a href="javascript:refreshVerify()" >点击刷新</a>
+                    <input type="text" name="verifycode" class="pass-text-input " placeholder="请输入验证码">
+<!--                 <img id="captcha_img" src="<?php echo captcha_src(); ?>" alt="验证码" onclick="refreshVerify()"><a href="javascript:refreshVerify()" >点击刷新</a> -->
+                <img id="verifycode_img" title="点击更换" src="<?php echo captcha_src(); ?>" onclick="this.src='<?php echo captcha_src(); ?>?seed='+Math.random()"> 
                 </p>
                 
                 <p class="pass-form-item">
