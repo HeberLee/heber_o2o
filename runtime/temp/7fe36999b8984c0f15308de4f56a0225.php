@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1514775898;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1514778330;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1514775581;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1514775898;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518440090;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1514775581;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,38 +18,34 @@
     <div class="header-bar">
         <div class="header-inner">
             <ul class="father">
-                <li><a>北京</a></li>
+                <li><a><?php echo $city['name']; ?></a></li>
                 <li>|</li>
                 <li class="city">
                     <a>切换城市<span class="arrow-down-logo"></span></a>
                     <div class="city-drop-down">
                         <h3>热门城市</h3>
                         <ul class="son">
-                            <li><a href="">北京</a></li>
-                            <li><a href="">上海</a></li>
-                            <li><a href="">广州</a></li>
-                            <li><a href="">深圳</a></li>
-                            <li><a href="">天津</a></li>
-                            <li><a href="">杭州</a></li>
-                            <li><a href="">西安</a></li>
-                            <li><a href="">成都</a></li>
-                            <li><a href="">郑州</a></li>
-                            <li><a href="">厦门</a></li>
-                            <li><a href="">青岛</a></li>
-                            <li><a href="">太原</a></li>
-                            <li><a href="">重庆</a></li>
-                            <li><a href="">武汉</a></li>
-                            <li><a href="">南京</a></li>
-                            <li><a href="">沈阳</a></li>
-                            <li><a href="">济南</a></li>
-                            <li><a href="">哈尔滨</a></li>
+                            <?php if(is_array($cities) || $cities instanceof \think\Collection || $cities instanceof \think\Paginator): $i = 0; $__LIST__ = $cities;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <li><a href="<?php echo url('index/index',['city'=>$vo['uname']]); ?>"><?php echo $vo['name']; ?></a></li>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                            
                         </ul>
                         
                     </div>
                 </li>
+                <li><a href="<?php echo url('bis/login/index'); ?>">商户中心</a></li>
+                <?php if($userInfo): ?>
+                <li>欢迎您：<?php echo $userInfo['username']; ?></li>
+                <li><a href="<?php echo url('index/user/logout'); ?>">退出</a></li>
+
+                <?php else: ?>
                 <li><a href="index/user/register">注册</a></li>
                 <li>|</li>
                 <li><a href="index/user/login">登录</a></li>
+                <?php endif; ?>
+                
+                
+
             </ul>
         </div>
     </div>    <div class="search">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\register.html";i:1518267206;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\register.html";i:1518417036;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,11 +39,11 @@
                 
                 <p class="pass-form-item">
                     <label class="pass-label">密码</label>
-                    <input type="text" name="password" class="pass-text-input" placeholder="请设置登录密码">
+                    <input type="password" name="password" class="pass-text-input" placeholder="请设置登录密码">
                 </p>
                 <p class="pass-form-item">
                     <label class="pass-label">确认密码</label>
-                    <input type="text" name="repassword" class="pass-text-input" placeholder="请设置登录密码">
+                    <input type="password" name="repassword" class="pass-text-input" placeholder="请设置登录密码">
                 </p>
                 <p class="pass-form-item">
                     <label class="pass-label">验证码</label>

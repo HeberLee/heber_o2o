@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\login.html";i:1514779500;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\user\login.html";i:1518417062;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,16 +32,21 @@
                 <div class="login-area">
                     <div class="title">登录</div>
                     <div class="login">
-                        <form>
+                        <form action="<?php echo url('user/login'); ?>" method='post'>
                             <div class="ordinaryLogin">
                                 
                                 <p class="pass-form-item">
                                     <label class="pass-label">用户名</label>
-                                    <input type="text" name="userName" class="pass-text-input" placeholder="用户名">
+                                    <input type="text" name="username" class="pass-text-input" placeholder="用户名">
                                 </p>
                                 <p class="pass-form-item">
                                     <label class="pass-label">密码</label>
                                     <input type="password" name="password" class="pass-text-input" placeholder="密码">
+                                </p>
+                                <p class="pass-form-item">
+                                    <label class="pass-label">验证码</label>
+                                    <input type="text" name="verifycode" class="pass-text-input " placeholder="请输入验证码">
+                                <img id="verifycode_img" title="点击更换" src="<?php echo captcha_src(); ?>" onclick="this.src='<?php echo captcha_src(); ?>?seed='+Math.random()"> 
                                 </p>
                                 
                             </div>
