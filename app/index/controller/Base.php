@@ -7,13 +7,18 @@ class Base extends Controller{
 	private $city;
 	private $userInfo;
 
+
 	public function _initialize(){
 		$cities = model('City')->getNormalCities();
 		$this->getCity($cities);
 		$this->getUserInfo();
+		//
+
+		$cats = $this->getRecommendCats();
 		$this->assign('cities',$cities);
 		$this->assign('city',$this->city);
 		$this->assign('userInfo',$this->userInfo);
+		$this->assign('cats',$cats);
 	}
 
 	public function getCity($cities){
@@ -45,6 +50,27 @@ class Base extends Controller{
 		}
 
 		
+	}
+
+	public function getRecommendCats(){
+		$parentIds = $seCatArr = $recommendCats = [];
+		$cats = model('Category')->getNormalRecommendCategorysByParentId(0,5);
+		foreach ($cats as $cat) {
+			$parentIds[] = $cat['id'];
+		}
+		$seCats = model('Category')->getNormalCategorysByParentId($parentIds);
+		foreach($seCats as $seCat){
+			$seCatArr[$seCat['parend_id']] = [
+				'id' => $seCat['id'],
+				'name' => $seCat['name'],
+			];
+		}
+
+		foreach($cats as $cat){
+			$recommendCats[$cat['id']] = [$cat['name'],empty($seCatArr[$cat['id']])?'':$seCatArr[$cat['id']]];
+		}
+
+		return $recommendCats;
 	}
     // public function index(){
     // 	return $this->fetch();

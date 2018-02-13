@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1514775898;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518440090;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1514775581;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1514775898;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518527245;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1514775581;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@
 
                 <?php else: ?>
                 <li><a href="index/user/register">注册</a></li>
-                <li>|</li>
+<!--                 <li>|</li> -->
                 <li><a href="index/user/login">登录</a></li>
                 <?php endif; ?>
                 
