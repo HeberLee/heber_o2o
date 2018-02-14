@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1514775898;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518527245;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1514775581;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1518618298;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518527245;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1518615084;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,317 +59,35 @@
                 <li class="nav-item">
                     <span class="item">全部分类</span>
                     <div class="left-menu">
+
+                        <?php if(is_array($cats) || $cats instanceof \think\Collection || $cats instanceof \think\Paginator): $i = 0; $__LIST__ = $cats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?>
                         <div class="level-item">
                             <div class="first-level">
                                 <dl>
-                                    <dt class="title"><a href="" target="_top">美食</a></dt>
-                                    <dd><a href="" target="_top" class="">精选品牌</a></dd>
-                                    <dd><a href="" target="_top" class="">小吃快餐</a></dd>
+                                    <dt class="title"><a href="<?php echo url('lists/index',['id'=>$key]); ?>" target="_blank"><?php echo $cat['0']; ?></a></dt>
+
+                                    <?php if(is_array($cat['1']) || $cat['1'] instanceof \think\Collection || $cat['1'] instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($cat['1']) ? array_slice($cat['1'],0,2, true) : $cat['1']->slice(0,2, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$seCat): $mod = ($i % 2 );++$i;?>
+                                    <dd><a href="<?php echo url('lists/index',['id'=>$seCat['id']]); ?>" target="_blank" class=""><?php echo $seCat['name']; ?></a></dd>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </dl>
                             </div>
                             <div class="second-level">
                                 <div class="section">
                                     <div class="section-item clearfix no-top-border">
-                                        <h3>热门分类</h3>
+                                        <h3>其他分类</h3>
                                         <ul>
-                                            <li><a class="hot">精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
+                                            <?php if(is_array($cat['1']) || $cat['1'] instanceof \think\Collection || $cat['1'] instanceof \think\Paginator): $i = 0; $__LIST__ = $cat['1'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                            <li><a href="<?php echo url('lists/index',['id'=>$vo['id']]); ?>" target="_blank" class=""><?php echo $vo['name']; ?></a></li>
+                                            <?php endforeach; endif; else: echo "" ;endif; ?>
+
                                         </ul>
                                     </div>
-                                    <div class="section-item clearfix">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
+
                                     
                                 </div>
                             </div>
                         </div>
-                        <div class="level-item">
-                            <div class="first-level">
-                                <dl>
-                                    <dt class="title"><a href="" target="_top">电影</a></dt>
-                                    <dd><a href="" target="_top" class="">订座</a></dd>
-                                    <dd><a href="" target="_top" class="">电影票团购</a></dd>
-                                </dl>
-                            </div>
-                            <div class="second-level">
-                                <div class="section">
-                                    <div class="section-item clearfix no-top-border">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="section-item clearfix">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="level-item">
-                            <div class="first-level">
-                                <dl>
-                                    <dt class="title"><a href="" target="_top">休闲娱乐</a></dt>
-                                    <dd><a href="" target="_top" class="">ktv</a></dd>
-                                    <dd><a href="" target="_top" class="">温泉洗浴</a></dd>
-                                </dl>
-                            </div>
-                            <div class="second-level">
-                                <div class="section">
-                                    <div class="section-item clearfix no-top-border">
-                                        <ul>
-                                            <li><a class="hot">精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="section-item clearfix">
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="level-item">
-                            <div class="first-level">
-                                <dl>
-                                    <dt class="title"><a href="" target="_top">电影</a></dt>
-                                    <dd><a href="" target="_top" class="">订座</a></dd>
-                                    <dd><a href="" target="_top" class="">电影票团购</a></dd>
-                                </dl>
-                            </div>
-                            <div class="second-level">
-                                <div class="section">
-                                    <div class="section-item clearfix no-top-border">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="section-item clearfix">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="level-item">
-                            <div class="first-level">
-                                <dl>
-                                    <dt class="title"><a href="" target="_top">电影</a></dt>
-                                    <dd><a href="" target="_top" class="">订座</a></dd>
-                                    <dd><a href="" target="_top" class="">电影票团购</a></dd>
-                                </dl>
-                            </div>
-                            <div class="second-level">
-                                <div class="section">
-                                    <div class="section-item clearfix no-top-border">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="section-item clearfix">
-                                        <h3>热门分类</h3>
-                                        <ul>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                            <li><a>精选品牌</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                     <?php endforeach; endif; else: echo "" ;endif; ?>   
                     </div>
                 </li>
                 <li class="nav-item"><a class="item first active">首页</a></li>
@@ -386,8 +104,9 @@
                     <a href="#" class="slide-prev"><i class="slide-arrow-left"></i></a>
                     <a href="#" class="slide-next"><i class="slide-arrow-right"></i></a>
                     <ul class="slideshow">
-                        <li><a href="" class="item-large"><img class="ad-pic" src="image/a1ec08fa513d2697b85e74c35dfbb2fb4216d89b.jpg" /></a></li>
-                        <li><a href="" class="item-large"><img class="ad-pic" src="image/63d0f703918fa0ec7c51e2912e9759ee3c6ddb9c.jpg" /></a></li>
+                        <?php if(is_array($big_urls) || $big_urls instanceof \think\Collection || $big_urls instanceof \think\Paginator): $i = 0; $__LIST__ = $big_urls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$big_url): $mod = ($i % 2 );++$i;?>
+                        <li><a href="" class="item-large"><img class="ad-pic" src="<?php echo $big_url; ?>" /></a></li>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                 </div>
                 <div class="list-container">
@@ -398,7 +117,7 @@
         <div class="right-sidebar">
             <div class="right-ad">
                 <ul class="slidepic">
-                    <li><a><img src="image/72f082025aafa40f9205eb43a364034f79f01968.jpg" /></a></li>
+                    <li><a><img src="<?php echo $right_url; ?>" /></a></li>
                 </ul>
             </div>
             

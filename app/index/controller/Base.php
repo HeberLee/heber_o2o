@@ -60,7 +60,7 @@ class Base extends Controller{
 		}
 		$seCats = model('Category')->getNormalCategorysByParentId($parentIds);
 		foreach($seCats as $seCat){
-			$seCatArr[$seCat['parend_id']] = [
+			$seCatArr[$seCat['parent_id']][] = [
 				'id' => $seCat['id'],
 				'name' => $seCat['name'],
 			];

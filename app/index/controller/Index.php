@@ -5,7 +5,11 @@ use think\Controller;
 
 class Index extends Base{
     public function index(){
-    	return $this->fetch();
+    	//获取首页大图
+    	$big_urls = model('featured')->getBigImageUrls();
+    	$right_url = model('featured')->getRightImageUrl();
+    	//获取首页
+    	return $this->fetch('',['big_urls'=>$big_urls,'right_url'=>$right_url]);
     }
 
     public function test(){

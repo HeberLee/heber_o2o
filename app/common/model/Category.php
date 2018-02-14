@@ -78,7 +78,7 @@ class Category extends Model{
 			'id' => 'dsc',
 		];
 		$result = $this->where($data)
-					->order($order);
+					->order($order)
 					->select();
 		return $result;
 	}

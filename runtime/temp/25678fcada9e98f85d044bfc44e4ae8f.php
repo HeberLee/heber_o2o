@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:85:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\featured\index.html";i:1518180891;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1518175816;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1518175843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:85:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\featured\index.html";i:1518181047;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1518175816;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1518175843;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -36,7 +36,7 @@
 <nav class="breadcrumb"></nav>
 <div class="page-container">
   <div class="text-c"> 
-  <form method="get" action="">
+  <form method="get" action="<?php echo url('featured/index'); ?>">
       <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>选择推荐类别：</label>
       <div class="formControls col-xs-8 col-sm-3"> <span class="select-box">
         <select name="type" class="select">
