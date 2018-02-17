@@ -4,7 +4,7 @@ use think\Controller;
 
 
 class Base extends Controller{
-	private $city;
+	public $city;
 	private $userInfo;
 
 
