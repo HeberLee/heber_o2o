@@ -19,6 +19,8 @@ class Base extends Controller{
 		$this->assign('city',$this->city);
 		$this->assign('userInfo',$this->userInfo);
 		$this->assign('cats',$cats);
+		$this->assign('controller',strtolower(request()->controller()));
+		$this->assign('title','o2o团购');
 	}
 
 	public function getCity($cities){

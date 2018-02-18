@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\deal\index.html";i:1517481464;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1518175816;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1518175843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/admin\view\deal\add.html";i:1518924566;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\header.html";i:1518175816;s:74:"D:\Software\phpstudy\WWW\study\heber_o2o\app\admin\view\public\footer.html";i:1518175843;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>
@@ -37,7 +37,7 @@
 <div class="page-container">
 <div class="cl pd-5 bg-1 bk-gray mt-20"> 
 	<div class="text-c">
-		<form action="<?php echo url('deal/index'); ?>" method="get">
+		<form action="<?php echo url('deal/add'); ?>" method="get">
 		 <span class="select-box inline">
 			<select name="category_id" class="select">
 				
@@ -92,7 +92,7 @@
 					<td><?php echo $vo['total_count']; ?></td>
 					<td><?php echo $vo['start_time']; ?></td>
 					<td><?php echo $vo['create_time']; ?></td>
-					<td><?php echo status($vo['status']); ?></td>
+					<td class="td-status"><a href="<?php echo url('deal/status',['id'=>$vo['id'],'status'=>$vo['status']==1?0:1]); ?>" title="点击修改状态"><?php echo status($vo['status']); ?></a></td>
 					<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="查看"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>

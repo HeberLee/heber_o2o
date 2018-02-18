@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\deal\add.html";i:1517215187;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1515231327;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1515231441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/bis\view\deal\add.html";i:1517215187;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\header.html";i:1518175819;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\bis\view\public\footer.html";i:1518175844;}*/ ?>
 <!--包含头部文件-->
 <!DOCTYPE HTML>
 <html>

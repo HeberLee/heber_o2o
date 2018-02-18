@@ -1,15 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1518878349;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518527245;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1518615084;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"D:\Software\phpstudy\WWW\study\heber_o2o\public/../app/index\view\index\index.html";i:1518948140;s:72:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\head.html";i:1518946999;s:71:"D:\Software\phpstudy\WWW\study\heber_o2o\app\index\view\public\nav.html";i:1518615084;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>首页</title>
+    <title><?php echo $title; ?></title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="__STATIC__/index/css/base.css" />
     <link rel="stylesheet" href="__STATIC__/index/css/common.css" />
-    <link rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/<?php echo $controller; ?>.css" />
     <script type="text/javascript" src="__STATIC__/index/js/html5shiv.js"></script>
     <script type="text/javascript" src="__STATIC__/index/js/respond.min.js"></script>
     <script type="text/javascript" src="__STATIC__/index/js/jquery-1.11.3.min.js"></script>
@@ -161,7 +161,7 @@
                                     </div>
                                 </a>
                                 <div class="contentbox">
-                                    <a href="//www.nuomi.com/deal/ke0370si.html" target="_blank">
+                                    <a href="<?php echo url('detail/index',['id'=>$vo['id']]); ?>" target="_blank">
                                         <div class="header">
                                             <h4 class="title ">【6店通用】好伦哥</h4>
                                         </div>

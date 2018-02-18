@@ -27,6 +27,16 @@ class Deal extends BaseModel{
 					->select();
 	}
 
+	public function getApplyDeals($data=[]){
+		$data['status'] = 0;
+		$order = [
+			'id' => 'desc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
+	}
+
 /**
  * @Author   HeberLee
  * @DateTime 2018-02-17T22:05:33+0800
