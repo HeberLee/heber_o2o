@@ -37,6 +37,20 @@ class Category extends Model{
 					->paginate(5);
 	}
 
+	public function getSeCategorysByParentId($parent_id){
+		$data = [
+			'parent_id' => $parent_id,
+			'status' => 1,
+		];
+		$order = [
+			'listorder' => 'asc',
+			'id' => 'desc',
+		];
+		return $this->where($data)
+					->order($order)
+					->select();
+	}
+
 	public function getCategorysByParentIdNoPages($parent_id){
 		$data = [
 			'parent_id' => $parent_id,
@@ -83,6 +97,21 @@ class Category extends Model{
 		return $result;
 	}
 
+
+	public function getCategoryById($id){
+		$data = [
+			'id' => $id,
+			'status' => 1,
+		];
+		$order = [
+			'listorder' => 'dsc',
+			'id' => 'dsc',
+		];
+		$result = $this->where($data)
+					->order($order)
+					->find();
+		return $result;
+	}
 	// public function getNameById($id){
 	// 	$data = [
 	// 		'id' => $id,

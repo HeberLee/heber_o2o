@@ -64,4 +64,14 @@ class Deal extends BaseModel{
 		return $result->select();
 
 	}
+
+	public function getDealsByData($data,$orders){
+		$data['status'] = 1;
+
+		return $this->where($data)
+					->order($orders)
+					->select();
+
+	}
+
 }
